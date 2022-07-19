@@ -361,7 +361,6 @@ const atrees = {
                     "parts": [
                         {
                             "name": "Trap Damage",
-                            "type": "damage",
                             "multipliers": [140, 30, 0, 0, 30, 0]
                         }
                     ]
@@ -667,10 +666,20 @@ const atrees = {
             "properties": {},
             "effects": [
                 { 
-                    "type": "add_spell_prop",
-                    "base_spell": 4, 
-                    "target_part": "Hound Damage", 
-                    "multipliers": [40, 0, 0, 0, 0, 0]
+                    "type": "replace_spell",
+                    "name": "Call of the Hound",
+                    "base_spell": 8,
+                    "display": "DPS (appx)",
+                    "parts": [
+                        {
+                            "name": "Per Hit",
+                            "multipliers": [40, 0, 0, 0, 0, 0]
+                        },
+                        {
+                            "name": "DPS (appx)",
+                            "hits": { "Per Hit": 4 }
+                        }
+                    ]
                 }
             ]
         },
